@@ -1,0 +1,32 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    const int JUMLAH_MHS = 3;   // jumlah data
+    int nilai[JUMLAH_MHS];
+    int maks, min;
+
+    cout << "Program Cari Nilai Maksimum dan Minimum Mahasiswa\n";
+
+    // input nilai mahasiswa
+    for (int i = 0; i < JUMLAH_MHS; i++) {
+        cout << "Masukkan nilai mahasiswa ke-" << (i + 1) << " : ";
+        cin >> nilai[i];
+    }
+
+    // inisialisasi maks dan min dengan elemen pertama
+    maks = nilai[0];
+    min  = nilai[0];
+
+    // cari maks dan min
+    for (int i = 1; i < JUMLAH_MHS; i++) {
+        if (nilai[i] > maks) maks = nilai[i];
+        if (nilai[i] < min)  min  = nilai[i];
+    }
+
+    // tampilkan hasil
+    cout << "\nNilai maksimum = " << maks << endl;
+    cout << "Nilai minimum  = " << min << endl;
+
+    return 0;
+}
